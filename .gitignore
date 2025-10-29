@@ -20,4 +20,4 @@ yarn.lock
 .tanstack
 
 .vscode
-.dist
+dist
