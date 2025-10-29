@@ -1,3 +1,4 @@
+# TanStack Frontend Template
 
 A fast, sensible React starter for teams and prototypes — focused on developer experience.
 
@@ -23,3 +24,4 @@ If you want a short, copy-focused README for the repo root and detailed walk-thr
 
 ---
 
+If you'd like the README to include more visuals (screenshots, badges) or a one-click deploy button, tell me which provider and I will add them.

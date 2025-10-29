@@ -2,8 +2,8 @@ name: Deploy — Vercel
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   deploy:
