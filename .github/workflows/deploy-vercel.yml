@@ -1,0 +1,39 @@
+name: Deploy — Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Enable pnpm
+        run: corepack enable && corepack prepare pnpm@latest --activate
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Deploy to Vercel (using vercel CLI)
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          # Install/execute Vercel CLI and deploy to the linked project
+          npx vercel --prod --token "$VERCEL_TOKEN" --confirm
+
+    # If you prefer the official Vercel Action or need to pass org/project IDs,
+    # replace the last step with the appropriate action and provide
+    # VERCEL_ORG_ID / VERCEL_PROJECT_ID as secrets.
