@@ -48,6 +48,7 @@ npm run test:run   # Run tests once
 ## Creating a New Route
 
 1. Create file in `app/` directory:
+
 ```typescript
 // app/products.tsx
 import { createFileRoute } from '@tanstack/react-router';
@@ -70,6 +71,7 @@ function ProductsPage() {
 ## Creating a Custom Hook with Mock Data
 
 1. Create mock data in `shared/lib/api/`:
+
 ```typescript
 // shared/lib/api/products-mock.ts
 import { z } from 'zod';
@@ -94,6 +96,7 @@ export const fetchProducts = async () => {
 ```
 
 2. Create hook in `shared/hooks/`:
+
 ```typescript
 // shared/hooks/useProducts.ts
 import { useQuery } from '@tanstack/react-query';
@@ -108,6 +111,7 @@ export function useProducts() {
 ```
 
 3. Use in your route:
+
 ```typescript
 // app/products.tsx
 import { useProducts } from '../shared/hooks/useProducts';
